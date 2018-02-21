@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Picasso</title>
+  </head>
+  <body>
+     
+     <nav>
+        <div class="menu-header">
+           <div class="tools" onclick="openTools()">
+              <img src="icons/paintbrushes.png">
+          </div>
+          <div class="crop" onclick="cropprImg()">
+              <img src="icons/crop.png">
+          </div>
+          <div class="mirror" onclick="mirrorImg()">
+              <img src="icons/mirror.png">
+          </div>
+        </div>
+  
+        <div class="menu-bootom">
+           <div class="add" title="Add file">
+             <input id="myFile" type="file" onchange="upload(this)"/>
+            <div class="add" id="getFile">
+               <img src="icons/add.png">
+            </div> 
+           </div>
+           <div class="save" id="saveImg" onclick = "Save()">
+              <img src="icons/save.png">
+           </div>
+           <div class="about">
+              <img src="icons/speech-bubble.png">
+           </div>
+        </div>
+  </nav>
+
+  <div id="submenu" class="active">
+      <div class="pencil_false" id="pencil" onclick="openPencil()">
+          <img src="icons/pencil.png"> 
+      </div>
+      <div class="brushe_false" id="brushe" onclick="openBrush()">
+           <img src="icons/paintbrush.png">
+      </div>
+      <div class="delete_false" id="delete" onclick="clearDraw()">
+        <img src="icons/eraser.png">
+      </div>
+      <div class="refresh_false" id="refresh" onclick="rotateImg()">
+         <img src="icons/refresh.png">
+      </div>
+      <div class="slidecontainer" id="slide">
+         <label>Change weight: </label> 
+         <label id="val"></label>
+        <input type="range" min="1" max="50" step="1" value="1" class="slider" id="myRange" onchange="setFilter()">
+     </div>
+     <div class="brightness">
+       <label id="bright"> Brightness: </label>
+       <label id="val_bright"></label>
+       <input type="range" min="0" max="200" value="100" class="slide_light" id="myRange_bright" onchange="setFilter()">
+     </div>
+     <div class="saturation">
+       <label id="satur"> Saturation: </label>
+       <label id="val_satur"></label>
+       <input type="range" min="0" max="100" value="1" class="slide_light" id="myRange_satur" onchange="setFilter()">
+     </div>
+     <div class="grayScale" id="gray">
+      <label id="gray_scale"> Gray scale: </label>
+      <label id="val_gray"></label>
+      <input type="range" min="0" max="100" value="1" class="slide_light" id="myRange_gray" onchange="setFilter()">
+    </div>
+     <div class="contrast">
+       <label id="contrast"> Contrast: </label>
+       <label id="val_contrast"></label>
+       <input type="range" min="0" max="200" value="100" class="slide_light" id="myRange_contrast" onchange="setFilter()">
+     </div>
+     <div class="invert">
+       <label id="invert"> Invert colors: </label>
+       <label id="val_invert"></label>
+       <input type="range" min="0" max="100" value="0" class="slide_light" id="myRange_invert"
+        onchange="setFilter()">
+     </div>
+   <div class="wrap">
+            
+         <div class="wrapper">
+                  
+        </div>
+
+   </div>
+
+</div>
+
+   <div class="canvas" id="main">
+           <div id="cnv">
+                
+           </div>
+   </div>
+
+        
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/addons/p5.dom.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="docs/iro.min.js"></script>
+    <script type="text/javascript" src="p5.js"></script>
+    <script type="text/javascript" src="fontawesome-all.js"></script>
+    <script type="text/javascript" src="draw.js"></script>
+  </body>
+</html>
